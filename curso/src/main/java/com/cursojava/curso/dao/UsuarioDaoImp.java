@@ -49,10 +49,10 @@ public class UsuarioDaoImp implements UsuarioDao {
         if (lista.isEmpty()) {
             return null;
         }
-        String contraseniaHash = lista.get(0).getContrasenia();
+        String contraseniaHash = lista.get(0).getPassword();
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
 
-        if (argon2.verify(contraseniaHash, usuario.getContrasenia())) {
+        if (argon2.verify(contraseniaHash, usuario.getPassword())) {
             return lista.get(0);
         } else {
             return null;

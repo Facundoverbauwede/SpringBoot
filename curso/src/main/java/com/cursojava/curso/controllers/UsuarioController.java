@@ -51,14 +51,14 @@ public class UsuarioController {
     public void registrarUsuario(@RequestBody Usuario usuario) {
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
 
-        String hash = argon2.hash(1, 1024, 1, usuario.getContrasenia());
+        String hash = argon2.hash(1, 1024, 1, usuario.getPassword());
 
-        usuario.setContrasenia(hash);
+        usuario.setPassword(hash);
 
         usuarioDao.registrar(usuario);
     }
 
-
+/*
     @RequestMapping(value = "api/usuario/")
     public Usuario editar() {
 
@@ -82,4 +82,6 @@ public class UsuarioController {
         usuario.setContrasenia("lala123");
         return usuario;
     }
+
+    */
 }
