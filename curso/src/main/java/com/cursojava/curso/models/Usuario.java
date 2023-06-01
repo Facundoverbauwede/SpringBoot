@@ -30,7 +30,8 @@ public class Usuario {
     @Getter@Setter @Column(name = "contrasenia")
     private String contrasenia;
 
-
+    @Getter@Setter @Column(name = "prueba")
+    private String PRUEBA;
 
 
 
